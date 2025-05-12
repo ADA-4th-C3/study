@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  study
-//
-//  Created by Nell on 5/11/25.
-//
+//  Copyright © 2025 ADA 4th Challenge3 Team1. All rights reserved.
 
 import SwiftUI
 
