@@ -1,0 +1,13 @@
+#!/bin/sh
+# Run swiftformat before pushing
+make format
+
+if ! git diff --quiet; then
+  echo "swiftformat made changes. Committing changes..."
+
+  git add .
+  git commit -m "Chore: apply swiftformat."
+  
+  echo "Changes committed. Please push again."
+  exit 1
+fi
