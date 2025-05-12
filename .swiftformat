@@ -1,2 +1,2 @@
 --indent 2
---disable blankLinesAroundMark
+--lineaftermarks false
