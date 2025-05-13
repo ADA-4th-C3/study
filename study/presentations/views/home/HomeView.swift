@@ -3,6 +3,8 @@
 import SwiftUI
 
 struct HomeView: View {
+  @EnvironmentObject var router: Router
+
   var body: some View {
     BaseView(
       create: { HomeViewModel() }
@@ -10,6 +12,11 @@ struct HomeView: View {
       VStack {
         Button(action: viewModel.add) {
           Text("Home\n\(state.count)")
+        }
+
+        // MARK: Diary
+        Button(action: { router.push(.diary) }) {
+          Text("Diary View")
         }
       }
     }

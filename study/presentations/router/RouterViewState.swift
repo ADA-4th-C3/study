@@ -6,8 +6,7 @@ enum RootPage {
 }
 
 enum SubPage {
-  case onobarding
-  case setting
+  case diary
 }
 
 struct RouterViewState {

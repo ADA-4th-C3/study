@@ -3,11 +3,6 @@
 make format
 
 if ! git diff --quiet; then
-  echo "swiftformat made changes. Committing changes..."
-
-  git add .
-  git commit -m "Chore: apply swiftformat."
-  
-  echo "Changes committed. Please push again."
+  echo "swiftformat made changes. Please review and commit them before pushing."
   exit 1
 fi

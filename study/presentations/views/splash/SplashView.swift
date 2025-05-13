@@ -8,26 +8,16 @@ struct SplashView: View {
   var body: some View {
     BaseView(
       create: { SplashViewModel() }
-    ) { viewModel, state in
-      Button(action: {
-        router.setRoot(.home)
-      }) {
-        VStack {
-          if state.loaded {
-            Text("Splash\nGo Home")
-          } else {
-            ProgressView()
-              .progressViewStyle(CircularProgressViewStyle())
-              .tint(.blue)
-          }
-        }
+    ) { viewModel, _ in
+      ProgressView()
+        .progressViewStyle(CircularProgressViewStyle())
+        .tint(.accentColor)
         .onAppear {
-          DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             viewModel.onLoaded()
+            router.setRoot(.home)
           }
         }
-      }
-      .disabled(!state.loaded)
     }
   }
 }

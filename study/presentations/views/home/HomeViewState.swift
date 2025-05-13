@@ -4,6 +4,8 @@ struct HomeViewState {
   let count: Int
 
   func copy(count: Int? = nil) -> HomeViewState {
-    return HomeViewState(count: count ?? self.count)
+    return HomeViewState(
+      count: count ?? self.count
+    )
   }
 }
