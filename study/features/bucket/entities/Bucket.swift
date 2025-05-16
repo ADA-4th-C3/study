@@ -10,4 +10,3 @@ struct Bucket {
     self.title = title
   }
 }
- 
