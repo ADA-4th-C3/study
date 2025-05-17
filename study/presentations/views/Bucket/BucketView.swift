@@ -4,7 +4,6 @@ import SwiftUI
 
 struct BucketView: View {
   var body: some View {
-
     BaseView(
       create: { BucketViewModel() }
     ) { _, _ in
