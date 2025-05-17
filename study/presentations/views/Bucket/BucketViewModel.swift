@@ -7,7 +7,7 @@ final class BucketViewModel: BaseViewModel<BucketViewState> {
       bucketList: []
     ))
   }
-  
+
   func setBucketTitle(_ bucketTitle: String) {
     emit(state.copy(bucketTitle: bucketTitle))
   }
@@ -26,4 +26,3 @@ final class BucketViewModel: BaseViewModel<BucketViewState> {
     )
   }
 }
-
