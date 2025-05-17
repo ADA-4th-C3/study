@@ -10,7 +10,7 @@ struct TodoView: View {
       VStack(spacing: 0) {
         // MARK: Toolbar
         Toolbar(title: "Todo")
-        
+
         // MARK: TextField
         HStack {
           TextField("Write todo title", text: Binding(
@@ -18,14 +18,14 @@ struct TodoView: View {
             set: viewModel.setTodoTitle
           ))
           .textFieldStyle(RoundedBorderTextFieldStyle())
-          
+
           IconButton("plus") {
             viewModel.add()
           }
         }
         .padding(.leading, 16)
         Divider()
-        
+
         if state.todoList.isEmpty {
           // MARK: Empty
           Spacer()
@@ -35,7 +35,6 @@ struct TodoView: View {
           // MARK: Todo List
           ForEach(state.todoList, id: \.id) { todo in
             HStack(spacing: 0) {
-              
               Button(action: {
                 viewModel.toggleTodo(todo)
               }) {
@@ -43,9 +42,9 @@ struct TodoView: View {
                   .foregroundColor(todo.bool ? .blue : .gray)
               }
               .padding(10)
-              
+
               Text(todo.title)
-              
+
               Spacer()
               IconButton("trash") {
                 viewModel.delete(todo)
@@ -54,7 +53,7 @@ struct TodoView: View {
             .padding(.leading, 16)
           }
         }
-        
+
         Spacer()
       }
     }

@@ -24,8 +24,8 @@ struct RouterView: View {
         // MARK: Sub page
         .navigationDestination(for: SubPage.self) { subPage in
           switch subPage {
-            case .diary: DiaryView()
-            case .todo: TodoView()
+          case .diary: DiaryView()
+          case .todo: TodoView()
           }
         }
         .toolbarBackground(.hidden, for: .navigationBar)

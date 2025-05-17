@@ -1,6 +1,5 @@
 //  Copyright © 2025 ADA 4th Challenge3 Team1. All rights reserved.
 
-
 final class TodoViewModel: BaseViewModel<TodoViewState> {
   init() {
     super.init(state: .init(
@@ -8,11 +7,11 @@ final class TodoViewModel: BaseViewModel<TodoViewState> {
       todoList: []
     ))
   }
-  
+
   func setTodoTitle(_ todoTitle: String) {
     emit(state.copy(todoTitle: todoTitle))
   }
-  
+
   func add() {
     if state.todoTitle.isEmpty { return }
     emit(state.copy(
@@ -20,13 +19,13 @@ final class TodoViewModel: BaseViewModel<TodoViewState> {
       todoList: state.todoList + [Todo(title: state.todoTitle, bool: false)]
     ))
   }
-  
+
   func delete(_ todo: Todo) {
     emit(state.copy(
       todoList: state.todoList.filter { $0.id != todo.id }
     ))
   }
-  
+
   func toggleTodo(_ todo: Todo) {
     let updatedList = state.todoList.map { item in
       if item.id == todo.id {
@@ -34,8 +33,7 @@ final class TodoViewModel: BaseViewModel<TodoViewState> {
       }
       return item
     }
-    
+
     emit(state.copy(todoList: updatedList))
   }
-  
 }
