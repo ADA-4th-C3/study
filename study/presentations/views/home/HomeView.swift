@@ -18,6 +18,11 @@ struct HomeView: View {
         Button(action: { router.push(.diary) }) {
           Text("Diary View")
         }
+
+        // MARK: Bucket
+        Button(action: { router.push(.bucket) }) {
+          Text("Bucket View")
+        }
       }
     }
   }
