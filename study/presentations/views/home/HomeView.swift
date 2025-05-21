@@ -23,6 +23,13 @@ struct HomeView: View {
               router.push(.bucket)
             }
           }
+
+          // MARK: GA2 - Prototype
+          Section(header: Text("GA2 - Prototype")) {
+            Tile(title: "Sample", subtitle: "Nickname") {
+              router.push(.prototypeSample)
+            }
+          }
         }
       }
     }

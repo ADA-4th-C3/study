@@ -4,7 +4,7 @@ import SwiftUI
 
 struct Tile: View {
   var title: String
-  var subtitle: String
+  var subtitle: String?
   var action: () -> Void
 
   var body: some View {
@@ -12,8 +12,10 @@ struct Tile: View {
       HStack {
         Text(title)
         Spacer()
-        Text(subtitle)
-          .opacity(0.75)
+        if subtitle != nil {
+          Text(subtitle!)
+            .opacity(0.75)
+        }
       }
     }
   }
