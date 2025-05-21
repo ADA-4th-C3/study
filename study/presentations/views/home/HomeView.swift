@@ -22,6 +22,9 @@ struct HomeView: View {
             Tile(title: "Bucket", subtitle: "Isla") {
               router.push(.bucket)
             }
+            Tile(title: "Todo", subtitle: "Jeje") {
+              router.push(.todo)
+            }
           }
 
           // MARK: GA2 - Prototype
