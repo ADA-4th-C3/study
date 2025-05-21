@@ -25,6 +25,7 @@ struct RouterView: View {
         .navigationDestination(for: SubPage.self) { subPage in
           switch subPage {
           case .diary: DiaryView()
+          case .todo: TodoView()
           case .bucket: BucketView()
           }
         }

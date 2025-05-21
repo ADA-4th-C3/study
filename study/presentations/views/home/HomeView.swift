@@ -19,9 +19,14 @@ struct HomeView: View {
           Text("Diary View")
         }
 
-        // MARK: Bucket
-        Button(action: { router.push(.bucket) }) {
-          Text("Bucket View")
+        // MARK: Todo
+        Button(action: { router.push(.todo) }) {
+          Text("Todo View")
+
+          // MARK: Bucket
+          Button(action: { router.push(.bucket) }) {
+            Text("Bucket View")
+          }
         }
       }
     }
