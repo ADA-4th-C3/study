@@ -27,6 +27,7 @@ struct RouterView: View {
           case .diary: DiaryView()
           case .todo: TodoView()
           case .bucket: BucketView()
+          case .prototypeSample: PrototypeSampleView()
           }
         }
         .toolbarBackground(.hidden, for: .navigationBar)
