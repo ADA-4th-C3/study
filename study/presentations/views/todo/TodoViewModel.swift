@@ -29,7 +29,7 @@ final class TodoViewModel: BaseViewModel<TodoViewState> {
   func toggleTodo(_ todo: Todo) {
     let updatedList = state.todoList.map { item in
       if item.id == todo.id {
-        return Todo(id: item.id, title: item.title, bool: !item.bool)
+        return Todo(id: item.id, title: item.title, bool: !item.deleted)
       }
       return item
     }

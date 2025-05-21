@@ -5,11 +5,19 @@ import SwiftUI
 struct Todo {
   let id: UUID
   let title: String
-  let bool: Bool
+  let deleted: Bool
 
   init(id: UUID = UUID(), title: String, bool: Bool = false) {
     self.id = id
     self.title = title
-    self.bool = bool
+    deleted = bool
+  }
+
+  func copy(id: UUID? = nil, title: String? = nil, deleted: Bool? = nil) -> Todo {
+    return Todo(
+      id: id ?? self.id,
+      title: title ?? self.title,
+      bool: deleted ?? self.deleted
+    )
   }
 }

@@ -38,8 +38,8 @@ struct TodoView: View {
               Button(action: {
                 viewModel.toggleTodo(todo)
               }) {
-                Image(systemName: todo.bool ? "checkmark.square.fill" : "square")
-                  .foregroundColor(todo.bool ? .blue : .gray)
+                Image(systemName: todo.deleted ? "checkmark.square.fill" : "square")
+                  .foregroundColor(todo.deleted ? .blue : .gray)
               }
               .padding(10)
 
