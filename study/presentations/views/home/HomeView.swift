@@ -8,20 +8,21 @@ struct HomeView: View {
   var body: some View {
     BaseView(
       create: { HomeViewModel() }
-    ) { viewModel, state in
+    ) { _, _ in
       VStack {
-        Button(action: viewModel.add) {
-          Text("Home\n\(state.count)")
-        }
+        // MARK: Toolbar
+        Toolbar(title: "ADA 4th C3 Team1", isPopButton: false)
 
-        // MARK: Diary
-        Button(action: { router.push(.diary) }) {
-          Text("Diary View")
-        }
-
-        // MARK: Bucket
-        Button(action: { router.push(.bucket) }) {
-          Text("Bucket View")
+        List {
+          // MARK: GA1 - Architecture
+          Section(header: Text("GA1 - Architecture")) {
+            Tile(title: "Diary", subtitle: "Nell") {
+              router.push(.diary)
+            }
+            Tile(title: "Bucket", subtitle: "Isla") {
+              router.push(.bucket)
+            }
+          }
         }
       }
     }

@@ -2,10 +2,6 @@
 
 final class HomeViewModel: BaseViewModel<HomeViewState> {
   init() {
-    super.init(state: .init(count: 0))
-  }
-
-  func add() {
-    emit(state.copy(count: state.count + 1))
+    super.init(state: .init())
   }
 }
